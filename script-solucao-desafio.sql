@@ -34,7 +34,7 @@ FROM Filmes
 WHERE Duracao > 100 AND Duracao < 150
 ORDER BY Duracao ASC;
 
--- 7 - Buscar a quantidade de filmes lançados no ano, agrupando por ano, ordenando pela quantidade em ordem decrescente
+-- 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
 
 SELECT Ano, COUNT(*) AS Quantidade
 FROM Filmes
@@ -44,7 +44,7 @@ ORDER BY Quantidade DESC, Ano ASC;
 
 -- 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
 
-SELECT PrimeiroNome, UltimoNome, Genero
+SELECT Id, PrimeiroNome, UltimoNome, Genero
 FROM Atores
 WHERE Genero = 'M';
 
@@ -76,5 +76,4 @@ SELECT Nome, a.PrimeiroNome, a.UltimoNome, ef.Papel
 FROM ElencoFilme ef
 JOIN Filmes f ON ef.IdFilme = f.Id
 JOIN Atores a ON ef.IdAtor = a.Id
-ORDER BY f.Nome;
 
