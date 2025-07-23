@@ -39,7 +39,7 @@ ORDER BY Duracao ASC;
 SELECT Ano, COUNT(*) AS Quantidade
 FROM Filmes
 GROUP BY Ano
-ORDER BY Quantidade DESC, Ano ASC;
+ORDER BY SUM(Duracao) DESC;
 
 
 -- 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
